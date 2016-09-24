@@ -1,0 +1,235 @@
+/*背景画布*/
+
+.wrap {
+	width: 343px;
+	height: 480px;
+	margin: auto;
+	position: relative;
+	background: url(../img/bg.jpg) no-repeat;
+	overflow: hidden;
+}
+
+
+/*游戏开始*/
+
+.gamestart {
+	display: block;
+}
+
+.move {
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	animation: birdmove 1.5s infinite;
+}
+
+.move .small_bird {
+	position: absolute;
+	width: 40px;
+	height: 25px;
+	display: inline-block;
+	right: 2px;
+	top: 20px;
+	animation: changebird 0.4s infinite;
+}
+
+
+/*按钮*/
+
+.btn {
+	position: absolute;
+	top: 250px;
+	width: 100%;
+	text-align: center;
+}
+
+.btn .start {
+	width: 85px;
+	height: 29px;
+	display: inline-block;
+	/*margin-left: 20px;*/
+	background: url(../img/start.jpg) no-repeat;
+}
+
+.btn .submit {
+	width: 85px;
+	height: 29px;
+	display: inline-block;
+	margin-left: 20px;
+	background: url(../img/submit.jpg) no-repeat;
+}
+
+
+/*移动条*/
+
+.slider {
+	width: 686px;
+	height: auto;
+	font-size: 0px;
+	position: absolute;
+	top: 423px;
+	left: 0px;
+	animation: slidermove 3s infinite linear;
+}
+
+.slider img {
+	display: inline-block;
+}
+
+
+/*积分*/
+
+.score {
+	position: absolute;
+	top: 30px;
+	text-align: center;
+	width: 100%;
+}
+
+
+/*bird动画*/
+
+@keyframes birdmove {
+	0% {
+		top: 100px;
+	}
+	50% {
+		top: 120px;
+	}
+	100% {
+		top: 100px;
+	}
+}
+
+@keyframes changebird {
+	0% {
+		background: url(../img/bird0.png);
+	}
+	100% {
+		background: url(../img/bird1.png);
+	}
+}
+
+
+/*移动条动画*/
+
+@keyframes slidermove {
+	0% {
+		left: 0px;
+	}
+	100% {
+		left: -343px;
+	}
+}
+
+
+/*鸟*/
+
+#bird {
+	display: none;
+	position: absolute;
+	top: 200px;
+}
+/*管道*/
+.pipelineItem{
+	width: 62px;
+	height: 423px;
+	position: absolute;
+	top: 0px;
+	right: -80px;
+}
+.top_pipeline{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	background: url(../img/up_mod.png);
+}
+.top_pipeline div{
+	background: url(../img/up_pipe.png) bottom no-repeat;
+}
+.bottom_pipeline{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background: url(../img/down_mod.png);
+}
+.bottom_pipeline div{
+	background: url(../img/down_pipe.png) top no-repeat;
+}
+
+
+/*游戏结束*/
+
+.gameover {
+	display: none;
+}
+
+.gameover .overimg {
+	position: absolute;
+	left: 60px;
+	top: 100px;
+	animation: overimgmove 2s;
+}
+
+.gameover .overmessage {
+	width: 269px;
+	height: 135px;
+	background: url(../img/message.jpg);
+	position: absolute;
+	left: 40px;
+	top: 150px;
+	animation: overmessagemove 2s;
+}
+
+.gameover .overmessage .thisscore {
+	position: absolute;
+	right: 30px;
+	top: 35px;
+	font-size: 2em;
+	color: white;
+}
+
+.gameover .overmessage .heightscore {
+	position: absolute;
+	right: 30px;
+	top: 85px;
+	font-size: 2em;
+	color: red;
+}
+
+.game_restrat {
+	position: absolute;
+	left: 120px;
+	bottom: 140px;
+	animation: gameresmove 2s;
+}
+
+
+/*游戏结束动画*/
+
+@keyframes overimgmove {
+	0% {
+		top: -50px
+	}
+	100% {
+		top: 100px
+	}
+}
+
+@keyframes overmessagemove {
+	0% {
+		left: -280px
+	}
+	100% {
+		left: 40px;
+	}
+}
+
+@keyframes gameresmove {
+	0% {
+		bottom: -40px
+	}
+	100% {
+		bottom: 140px
+	}
+}
